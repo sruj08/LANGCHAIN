@@ -5,11 +5,13 @@ load_dotenv()
 
 llm = HuggingFaceEndpoint(
     repo_id = "Qwen/Qwen2.5-Coder-32B-Instruct" ,
-    task = "text-generation"
+    task = "text-generation",
+    
 )
 
 model = ChatHuggingFace(llm=llm)
 
 response = model.invoke("What is the capital of India")
+
 
 print(response.content)
